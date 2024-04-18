@@ -10,8 +10,7 @@ function onLoginBtnClick(event) {
     event.preventDefault();
     // form을 다시 숨겨준다
     loginForm.classList.add(HIDDEN_CLASSNAME);
-    // value를 username이라는 key값으로 저장
-    localStorage.setItem(USERNAME_KEY, username);
+    localStorage.setItem(USERNAME_KEY, loginInput.value);
     // username값을 username이라는 key와 함께 local storeage에 저장
     paintGreetings();
 }
