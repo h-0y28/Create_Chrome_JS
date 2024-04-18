@@ -1,18 +1,23 @@
 const loginForm = document.querySelector("#login-form");
 const loginInput = document.querySelector("#login-form input");
 const greeting = document.querySelector("#greeting");
+
 const USERNAME_KEY = "username";
 const HIDDEN_CLASSNAME = "hidden";
 
 function onLoginBtnClick(event) {
+    // 화면 새로고침 방지
     event.preventDefault();
+    // form을 다시 숨겨준다
     loginForm.classList.add(HIDDEN_CLASSNAME);
-    const username = loginInput.value;
+    // value를 username이라는 key값으로 저장
     localStorage.setItem(USERNAME_KEY, username);
-    paintGreetings(username);
+    // username값을 username이라는 key와 함께 local storeage에 저장
+    paintGreetings();
 }
 
-function paintGreetings(username){
+function paintGreetings(){
+    const username = localStorage.getItem(USERNAME_KEY);
     greeting.innerText = `Hello ${username}`;
     greeting.classList.remove(HIDDEN_CLASSNAME);
 }
@@ -26,5 +31,5 @@ if(saveUsername === null){
     loginForm.addEventListener("submit", onLoginBtnClick);
 } else {
     // ahoe the greetings
-    paintGreetings(saveUsername);
+    paintGreetings();
 }
