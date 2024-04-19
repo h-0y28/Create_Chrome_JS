@@ -10,7 +10,7 @@ const quotes = [
     {
         quote: "In the end, it’s not the years in your life that count. It’s the life in your years.",
         author: "Abraham Lincoln",
-    }
+    },
 ];
 
 const quote = document.querySelector("#quote span:first-child");
