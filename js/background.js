@@ -6,6 +6,9 @@ console.log(chosenImage);
 
 const bgImage = document.createElement("img");
 
+bgImage.style.width = "auto";
+bgImage.style.height = "500px";
+
 bgImage.src = `img/${chosenImage}`;
 
 console.log(bgImage);
